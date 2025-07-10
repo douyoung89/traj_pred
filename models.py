@@ -6,10 +6,10 @@ from fusion_encoder import FusionEncoder
 from traj_encoder_4hot import FourHotTrajectoryEncoder
 
 # --- Hyperparameters and Configuration ---
-LAT_SIZE = 204       # number of latitude bins (example)
-LON_SIZE = 320       # number of longitude bins (example)
-SOG_SIZE = 30        # number of speed-over-ground bins (example)
-COG_SIZE = 36        # number of course-over-ground bins (example)
+LAT_SIZE = 250       # number of latitude bins (example)
+LON_SIZE = 270       # number of longitude bins (example)
+SOG_SIZE = 30       # number of speed-over-ground bins (example)
+COG_SIZE = 72        # number of course-over-ground bins (example)
 
 N_LAT_EMBD = 256      # embedding dim per latitude bin
 N_LON_EMBD = 256     # embedding dim per longitude bin
