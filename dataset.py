@@ -90,10 +90,13 @@ class VesselPatchDataset(Dataset):
             x = (lon_o-lon_min)/(lon_max-lon_min)
             row = int((1-y)*(PATCH_SIZE-1)); col = int(x*(PATCH_SIZE-1))
             if other['mmsi']==V['mmsi']:
-                continue
-            img[0,row,col] = 2.0
-            img[1,row,col] = oth_traj[j,2]
-            img[2,row,col] = oth_traj[j,3]
+                img[0, row, col] = 1.0 
+                img[1, row, col] = oth_traj[j, 2]
+                img[2, row, col] = oth_traj[j, 3]
+            else : 
+                img[0, row, col] = 2.0
+                img[1, row, col] = oth_traj[j, 2]
+                img[2, row, col] = oth_traj[j, 3]
 
         return {
             'trajectory': torch.from_numpy(seq),    # (max_seqlen,4)
