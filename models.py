@@ -144,6 +144,6 @@ for batch in dataloader:
     # 역전파 및 파라미터 업데이트 (실제 학습 시)
     # total_loss.backward()
     # optimizer.step()
-    # optimizer.zero_grad()
+    # optimizer.zero_grad() 
     
     break # 테스트를 위해 첫 배치만 실행
