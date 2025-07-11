@@ -28,6 +28,9 @@ class VesselPatchDataset(Dataset):
         # 2) 모든 (vessel_idx, window_start) 쌍을 미리 모아 둡니다
         self.samples = []
         for v_idx, V in enumerate(self.ais_data):
+            if np.isnan(V['traj']).any():
+                print(f"!!!!!!!!!!!!!! 초기 데이터 오류: v_idx {v_idx}의 'traj'에 NaN이 포함되어 있습니다. !!!!!!!!!!!!!!")
+            
             traj = V['traj']  # (T,5)
             T = len(traj)
             Nw = max(0, T - (seq_len - 1))
@@ -58,6 +61,8 @@ class VesselPatchDataset(Dataset):
             ts = int(target_time.timestamp())
             i = np.abs(times - ts).argmin()
             raw[j] = traj[i,:4]  # lat,lon,sog,cog
+        if np.isnan(raw).any():
+            raise RuntimeError(f"디버그 오류 1: 'raw' 시퀀스 생성 후 NaN 발생! (idx: {idx}, v_idx: {v_idx})")
 
         # 3) pad/trim → fixed max_seqlen
         seqlen = min(self.seq_len, self.max_seqlen)
@@ -75,15 +80,29 @@ class VesselPatchDataset(Dataset):
         # find center lat/lon normalized
         lat_cn = raw[-1,0]; lon_cn = raw[-1,1]
         # compute patch bounds…
+        if np.isnan(lat_cn) or np.isnan(lon_cn):
+            raise RuntimeError(f"디버그 오류 2: 중심 좌표(lat_cn, lon_cn)가 NaN입니다! (idx: {idx}, v_idx: {v_idx})")
+        
         lat_c_deg = denormalize_lat(lat_cn)
-        dlat = self.patch_km/111.0; dlon = self.patch_km/(111.0*np.cos(np.deg2rad(lat_c_deg)))
+        epsilon = 1e-8
+        dlat = self.patch_km/111.0; dlon = self.patch_km/(111.0*np.cos(np.deg2rad(lat_c_deg))+ epsilon)
         dlat_n = dlat/(LAT_MAX-LAT_MIN); dlon_n = dlon/(LON_MAX-LON_MIN)
         lat_min, lat_max = lat_cn-dlat_n, lat_cn+dlat_n
         lon_min, lon_max = lon_cn-dlon_n, lon_cn+dlon_n
+        # --- 💥 디버깅 검사 3: 패치 경계 계산 후 NaN 또는 0으로 나누기 조건 확인 ---
+        if np.isnan([lat_min, lat_max, lon_min, lon_max]).any():
+            raise RuntimeError(f"디버그 오류 3: 패치 경계(lat/lon_min/max) 계산 후 NaN 발생! (idx: {idx}, v_idx: {v_idx})")
+        if (lat_max - lat_min) == 0 or (lon_max - lon_min) == 0:
+             raise RuntimeError(f"디버그 오류 3.5: 패치 범위가 0입니다. 0으로 나누기 오류 발생! (idx: {idx}, v_idx: {v_idx})")
+
         img = np.zeros((3, PATCH_SIZE, PATCH_SIZE), dtype=np.float32)
-        for other in self.ais_data:
+        for other_v_idx, other in enumerate(self.ais_data):
             oth_traj = other['traj']; oth_times = oth_traj[:,4].astype(int)
             j = np.abs(oth_times - ts_key).argmin()
+            # --- 💥 디버깅 검사 4: 주변 선박 데이터에 NaN이 있는지 확인 ---
+            if np.isnan(oth_traj[j, :2]).any():
+                print(f"경고: 주변 선박(other_v_idx: {other_v_idx})의 위치 데이터가 NaN입니다. 건너뜁니다.")
+                continue
             lat_o, lon_o = oth_traj[j,0], oth_traj[j,1]
             if not (lat_min<=lat_o<=lat_max and lon_min<=lon_o<=lon_max):
                 continue
@@ -98,6 +117,9 @@ class VesselPatchDataset(Dataset):
                 img[0, row, col] = 2.0
                 img[1, row, col] = oth_traj[j, 2]
                 img[2, row, col] = oth_traj[j, 3]
+        # --- 💥 디버깅 검사 5: 최종 context 이미지에 NaN이 있는지 확인 ---
+        if np.isnan(img).any():
+             raise RuntimeError(f"디버그 오류 5: 최종 'img' (context) 생성 후 NaN 발생! (idx: {idx}, v_idx: {v_idx})")
 
         return {
             'trajectory': torch.from_numpy(seq),    # (max_seqlen,4)

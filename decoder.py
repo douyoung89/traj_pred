@@ -93,6 +93,12 @@ class AISDecoder(nn.Module):
         # # 클래스 개수 확인
         # num_classes = self.att_sizes[3].item()
         # print("Number of classes:", num_classes)
+        
+        if torch.isnan(cog_logits).any() or torch.isnan(sog_logits).any() or torch.isnan(lon_logits).any() or torch.isnan(lat_logits).any():
+            print("!!! NaN found in final logits !!!")
+        if torch.isinf(cog_logits).any() or torch.isinf(sog_logits).any() or torch.isinf(lon_logits).any() or torch.isinf(lat_logits).any():
+            print("!!! Inf found in final logits !!!")
+        
         lat_i, lon_i, sog_i, cog_i = lat_i.to(torch.long), lon_i.to(torch.long), sog_i.to(torch.long), cog_i.to(torch.long)
         
         loss_lat = self.loss_fn(lat_logits.view(-1, self.att_sizes[0].item()), lat_i.view(-1))

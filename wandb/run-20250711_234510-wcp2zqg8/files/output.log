@@ -1,0 +1,127 @@
+!!!!!!!!!!!!!! 초기 데이터 오류: v_idx 1947의 'traj'에 NaN이 포함되어 있습니다. !!!!!!!!!!!!!!
+!!!!!!!!!!!!!! 초기 데이터 오류: v_idx 6155의 'traj'에 NaN이 포함되어 있습니다. !!!!!!!!!!!!!!
+!!!!!!!!!!!!!! 초기 데이터 오류: v_idx 6439의 'traj'에 NaN이 포함되어 있습니다. !!!!!!!!!!!!!!
+!!!!!!!!!!!!!! 초기 데이터 오류: v_idx 86의 'traj'에 NaN이 포함되어 있습니다. !!!!!!!!!!!!!!
+!!!!!!!!!!!!!! 초기 데이터 오류: v_idx 310의 'traj'에 NaN이 포함되어 있습니다. !!!!!!!!!!!!!!
+!!!!!!!!!!!!!! 초기 데이터 오류: v_idx 236의 'traj'에 NaN이 포함되어 있습니다. !!!!!!!!!!!!!!
+!!!!!!!!!!!!!! 초기 데이터 오류: v_idx 365의 'traj'에 NaN이 포함되어 있습니다. !!!!!!!!!!!!!!
+!!!!!!!!!!!!!! 초기 데이터 오류: v_idx 732의 'traj'에 NaN이 포함되어 있습니다. !!!!!!!!!!!!!!
+Epoch 0:  17%|█████████████▊                                                                     | 1/6 [00:01<00:05,  0.94it/s, v_num=zqg8, train_loss=19.60]
+/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/callbacks/model_checkpoint.py:658: Checkpoint directory /data2/douyoungk/checkpoints exists and is not empty.
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0,1]
+  | Name            | Type                     | Params | Mode
+---------------------------------------------------------------------
+0 | context_encoder | ContextEncoder           | 192 K  | train
+1 | traj_encoder    | FourHotTrajectoryEncoder | 9.6 M  | train
+2 | fusion_encoder  | FusionEncoder            | 9.5 M  | train
+3 | decoder         | AISDecoder               | 17.2 M | train
+---------------------------------------------------------------------
+36.4 M    Trainable params
+0         Non-trainable params
+36.4 M    Total params
+145.734   Total estimated model params size (MB)
+145       Modules in train mode
+0         Modules in eval mode
+/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/connectors/logger_connector/result.py:434: It is recommended to use `self.log('val_loss', ..., sync_dist=True)` when logging on epoch level in distributed setting to accumulate the metric across devices.
+/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/connectors/logger_connector/result.py:434: It is recommended to use `self.log('val_pred_error', ..., sync_dist=True)` when logging on epoch level in distributed setting to accumulate the metric across devices.
+/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/loops/fit_loop.py:310: The number of training batches (6) is smaller than the logging interval Trainer(log_every_n_steps=50). Set a lower value for log_every_n_steps if you want to see logs for the training epoch.
+Traceback (most recent call last):
+  File "/data2/douyoungk/train/lit_module.py", line 254, in <module>
+    trainer.fit(model, dm)
+  File "/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py", line 561, in fit
+    call._call_and_handle_interrupt(
+  File "/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/call.py", line 47, in _call_and_handle_interrupt
+    return trainer.strategy.launcher.launch(trainer_fn, *args, trainer=trainer, **kwargs)
+  File "/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/strategies/launchers/subprocess_script.py", line 105, in launch
+    return function(*args, **kwargs)
+  File "/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py", line 599, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py", line 1012, in _run
+    results = self._run_stage()
+  File "/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py", line 1056, in _run_stage
+    self.fit_loop.run()
+  File "/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/loops/fit_loop.py", line 216, in run
+    self.advance()
+  File "/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/loops/fit_loop.py", line 455, in advance
+    self.epoch_loop.run(self._data_fetcher)
+  File "/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/loops/training_epoch_loop.py", line 152, in run
+    self.advance(data_fetcher)
+  File "/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/loops/training_epoch_loop.py", line 306, in advance
+    batch, _, __ = next(data_fetcher)
+  File "/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/loops/fetchers.py", line 134, in __next__
+    batch = super().__next__()
+  File "/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/loops/fetchers.py", line 61, in __next__
+    batch = next(self.iterator)
+  File "/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/utilities/combined_loader.py", line 341, in __next__
+    out = next(self._iterator)
+  File "/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/utilities/combined_loader.py", line 78, in __next__
+    out[i] = next(self.iterators[i])
+  File "/data2/envs/xformer/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 701, in __next__
+    data = self._next_data()
+  File "/data2/envs/xformer/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1445, in _next_data
+    return self._process_data(data)
+  File "/data2/envs/xformer/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1491, in _process_data
+    data.reraise()
+  File "/data2/envs/xformer/lib/python3.10/site-packages/torch/_utils.py", line 715, in reraise
+    raise exception
+RuntimeError: Caught RuntimeError in DataLoader worker process 1.
+Original Traceback (most recent call last):
+  File "/data2/envs/xformer/lib/python3.10/site-packages/torch/utils/data/_utils/worker.py", line 351, in _worker_loop
+    data = fetcher.fetch(index)  # type: ignore[possibly-undefined]
+  File "/data2/envs/xformer/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 52, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/data2/envs/xformer/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 52, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/data2/douyoungk/train/dataset.py", line 122, in __getitem__
+    raise RuntimeError(f"디버그 오류 5: 최종 'img' (context) 생성 후 NaN 발생! (idx: {idx}, v_idx: {v_idx})")
+RuntimeError: 디버그 오류 5: 최종 'img' (context) 생성 후 NaN 발생! (idx: 182, v_idx: 3490)
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/data2/douyoungk/train/lit_module.py", line 254, in <module>
+[rank0]:     trainer.fit(model, dm)
+[rank0]:   File "/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py", line 561, in fit
+[rank0]:     call._call_and_handle_interrupt(
+[rank0]:   File "/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/call.py", line 47, in _call_and_handle_interrupt
+[rank0]:     return trainer.strategy.launcher.launch(trainer_fn, *args, trainer=trainer, **kwargs)
+[rank0]:   File "/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/strategies/launchers/subprocess_script.py", line 105, in launch
+[rank0]:     return function(*args, **kwargs)
+[rank0]:   File "/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py", line 599, in _fit_impl
+[rank0]:     self._run(model, ckpt_path=ckpt_path)
+[rank0]:   File "/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py", line 1012, in _run
+[rank0]:     results = self._run_stage()
+[rank0]:   File "/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py", line 1056, in _run_stage
+[rank0]:     self.fit_loop.run()
+[rank0]:   File "/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/loops/fit_loop.py", line 216, in run
+[rank0]:     self.advance()
+[rank0]:   File "/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/loops/fit_loop.py", line 455, in advance
+[rank0]:     self.epoch_loop.run(self._data_fetcher)
+[rank0]:   File "/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/loops/training_epoch_loop.py", line 152, in run
+[rank0]:     self.advance(data_fetcher)
+[rank0]:   File "/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/loops/training_epoch_loop.py", line 306, in advance
+[rank0]:     batch, _, __ = next(data_fetcher)
+[rank0]:   File "/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/loops/fetchers.py", line 134, in __next__
+[rank0]:     batch = super().__next__()
+[rank0]:   File "/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/loops/fetchers.py", line 61, in __next__
+[rank0]:     batch = next(self.iterator)
+[rank0]:   File "/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/utilities/combined_loader.py", line 341, in __next__
+[rank0]:     out = next(self._iterator)
+[rank0]:   File "/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/utilities/combined_loader.py", line 78, in __next__
+[rank0]:     out[i] = next(self.iterators[i])
+[rank0]:   File "/data2/envs/xformer/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 701, in __next__
+[rank0]:     data = self._next_data()
+[rank0]:   File "/data2/envs/xformer/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1445, in _next_data
+[rank0]:     return self._process_data(data)
+[rank0]:   File "/data2/envs/xformer/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1491, in _process_data
+[rank0]:     data.reraise()
+[rank0]:   File "/data2/envs/xformer/lib/python3.10/site-packages/torch/_utils.py", line 715, in reraise
+[rank0]:     raise exception
+[rank0]: RuntimeError: Caught RuntimeError in DataLoader worker process 1.
+[rank0]: Original Traceback (most recent call last):
+[rank0]:   File "/data2/envs/xformer/lib/python3.10/site-packages/torch/utils/data/_utils/worker.py", line 351, in _worker_loop
+[rank0]:     data = fetcher.fetch(index)  # type: ignore[possibly-undefined]
+[rank0]:   File "/data2/envs/xformer/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 52, in fetch
+[rank0]:     data = [self.dataset[idx] for idx in possibly_batched_index]
+[rank0]:   File "/data2/envs/xformer/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 52, in <listcomp>
+[rank0]:     data = [self.dataset[idx] for idx in possibly_batched_index]
+[rank0]:   File "/data2/douyoungk/train/dataset.py", line 122, in __getitem__
+[rank0]:     raise RuntimeError(f"디버그 오류 5: 최종 'img' (context) 생성 후 NaN 발생! (idx: {idx}, v_idx: {v_idx})")
+[rank0]: RuntimeError: 디버그 오류 5: 최종 'img' (context) 생성 후 NaN 발생! (idx: 182, v_idx: 3490)

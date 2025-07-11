@@ -12,9 +12,9 @@ RUN_NAME     = 'exp1'             # W&B run 이름 또는 TensorBoard sub디렉�
 # 2. 데이터 설정 (Data Settings)
 # ─────────────────────────────────────────────────────────────────────────────
 # 경로
-TRAIN_DATA_PATH = "../test/train_3mth.pkl"
-VAL_DATA_PATH   = "../test/valid_3mth.pkl"
-TEST_DATA_PATH  = "../test/test_3mth.pkl"
+TRAIN_DATA_PATH = "../test/cleaned_train_3mth.pkl"
+VAL_DATA_PATH   = "../test/cleaned_valid_3mth.pkl"
+TEST_DATA_PATH  = "../test/cleaned_test_3mth.pkl"
 
 # 파라미터
 MAX_LEN         = 120            # 최대 시퀀스 길이

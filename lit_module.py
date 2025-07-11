@@ -102,11 +102,19 @@ class XFormerLit(pl.LightningModule):
         )
 
     def forward(self, traj_seq, context_map, mask):
+        if torch.isnan(traj_seq).any() or torch.isnan(context_map).any():
+            print("!!! NaN found in model input !!!")
         # 1) encode
         context_emb = self.context_encoder(context_map)
+        if torch.isnan(context_emb).any():
+            print("!!! NaN occurred after ContextEncoder !!!")
         src_key_padding_mask = ~mask.bool()
         traj_emb = self.traj_encoder(traj_seq, src_key_padding_mask)
+        if torch.isnan(traj_emb).any():
+            print("!!! NaN occurred after TrajectoryEncoder !!!")
         fused = self.fusion_encoder(traj_emb, context_emb)
+        if torch.isnan(fused).any():
+            print("!!! NaN occurred after FusionEncoder !!!")
         # 2) decode
         logits, loss = self.decoder(traj_seq, fused, src_key_padding_mask)
         return logits, loss

@@ -1,0 +1,388 @@
+Epoch 0:  17%|███████████████▊                                                                               | 1/6 [00:00<00:03,  1.41it/s, v_num=17vx, train_loss=19.60]!!! NaN found in model input !!!
+!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 0:  33%|███████████████████████████████▋                                                               | 2/6 [00:00<00:01,  2.48it/s, v_num=17vx, train_loss=nan.0]!!! NaN found in model input !!!
+!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 0:  50%|███████████████████████████████████████████████▌                                               | 3/6 [00:00<00:00,  3.32it/s, v_num=17vx, train_loss=nan.0]!!! NaN found in model input !!!
+!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 0:  67%|███████████████████████████████████████████████████████████████▎                               | 4/6 [00:01<00:00,  3.99it/s, v_num=17vx, train_loss=nan.0]!!! NaN found in model input !!!
+!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 0:  83%|███████████████████████████████████████████████████████████████████████████████▏               | 5/6 [00:01<00:00,  4.21it/s, v_num=17vx, train_loss=nan.0]!!! NaN found in model input !!!
+!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/callbacks/model_checkpoint.py:658: Checkpoint directory /data2/douyoungk/checkpoints exists and is not empty.
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0,1]
+  | Name            | Type                     | Params | Mode
+---------------------------------------------------------------------
+0 | context_encoder | ContextEncoder           | 192 K  | train
+1 | traj_encoder    | FourHotTrajectoryEncoder | 9.6 M  | train
+2 | fusion_encoder  | FusionEncoder            | 9.5 M  | train
+3 | decoder         | AISDecoder               | 17.2 M | train
+---------------------------------------------------------------------
+36.4 M    Trainable params
+0         Non-trainable params
+36.4 M    Total params
+145.734   Total estimated model params size (MB)
+145       Modules in train mode
+0         Modules in eval mode
+/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/connectors/logger_connector/result.py:434: It is recommended to use `self.log('val_loss', ..., sync_dist=True)` when logging on epoch level in distributed setting to accumulate the metric across devices.
+/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/connectors/logger_connector/result.py:434: It is recommended to use `self.log('val_pred_error', ..., sync_dist=True)` when logging on epoch level in distributed setting to accumulate the metric across devices.
+/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/loops/fit_loop.py:310: The number of training batches (6) is smaller than the logging interval Trainer(log_every_n_steps=50). Set a lower value for log_every_n_steps if you want to see logs for the training epoch.
+Epoch 0: 100%|███████████████████████████████████████████████████████████████████████████████████████████████| 6/6 [00:01<00:00,  4.75it/s, v_num=17vx, train_loss=nan.0]!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!                                                                                                       | 0/1 [00:00<?, ?it/s]
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 1:   0%|                                                                 | 0/6 [00:00<?, ?it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN found in model input !!!
+!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 1:  17%|█████████▌                                               | 1/6 [00:00<00:03,  1.50it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN found in model input !!!
+!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 1:  33%|███████████████████                                      | 2/6 [00:00<00:01,  2.61it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 1:  50%|████████████████████████████▌                            | 3/6 [00:00<00:00,  3.48it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN found in model input !!!
+!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 1:  67%|██████████████████████████████████████                   | 4/6 [00:00<00:00,  4.17it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN found in model input !!!
+!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 1:  83%|███████████████████████████████████████████████▌         | 5/6 [00:01<00:00,  4.21it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 1: 100%|█████████████████████████████████████████████████████████| 6/6 [00:01<00:00,  4.76it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!                                                                                                       | 0/1 [00:00<?, ?it/s]
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 2:   0%|                                                                 | 0/6 [00:00<?, ?it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN found in model input !!!
+!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 2:  17%|█████████▌                                               | 1/6 [00:00<00:03,  1.58it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 2:  33%|███████████████████                                      | 2/6 [00:00<00:01,  2.73it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN found in model input !!!
+!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 2:  50%|████████████████████████████▌                            | 3/6 [00:00<00:00,  3.62it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN found in model input !!!
+!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 2:  67%|██████████████████████████████████████                   | 4/6 [00:00<00:00,  4.32it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN found in model input !!!
+!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 2:  83%|███████████████████████████████████████████████▌         | 5/6 [00:01<00:00,  4.30it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 2: 100%|█████████████████████████████████████████████████████████| 6/6 [00:01<00:00,  4.86it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!                                                                                                       | 0/1 [00:00<?, ?it/s]
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 3:   0%|                                                                 | 0/6 [00:00<?, ?it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN found in model input !!!
+!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 3:  17%|█████████▌                                               | 1/6 [00:00<00:03,  1.56it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN found in model input !!!
+!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 3:  33%|███████████████████                                      | 2/6 [00:00<00:01,  2.71it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN found in model input !!!
+!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 3:  50%|████████████████████████████▌                            | 3/6 [00:00<00:00,  3.59it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN found in model input !!!
+!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 3:  67%|██████████████████████████████████████                   | 4/6 [00:00<00:00,  4.29it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 3:  83%|███████████████████████████████████████████████▌         | 5/6 [00:01<00:00,  4.29it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN found in model input !!!
+!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 3: 100%|█████████████████████████████████████████████████████████| 6/6 [00:01<00:00,  4.85it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!                                                                                                       | 0/1 [00:00<?, ?it/s]
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 4:   0%|                                                                 | 0/6 [00:00<?, ?it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN found in model input !!!
+!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 4:  17%|█████████▌                                               | 1/6 [00:00<00:03,  1.57it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 4:  33%|███████████████████                                      | 2/6 [00:00<00:01,  2.73it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN found in model input !!!
+!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 4:  50%|████████████████████████████▌                            | 3/6 [00:00<00:00,  3.61it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 4:  67%|██████████████████████████████████████                   | 4/6 [00:00<00:00,  4.31it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN found in model input !!!
+!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 4:  83%|███████████████████████████████████████████████▌         | 5/6 [00:01<00:00,  4.29it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 4: 100%|█████████████████████████████████████████████████████████| 6/6 [00:01<00:00,  4.84it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!                                                                                                       | 0/1 [00:00<?, ?it/s]
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 5:   0%|                                                                 | 0/6 [00:00<?, ?it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN found in model input !!!
+!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 5:  17%|█████████▌                                               | 1/6 [00:00<00:03,  1.51it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 5:  33%|███████████████████                                      | 2/6 [00:00<00:01,  2.63it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 5:  50%|████████████████████████████▌                            | 3/6 [00:00<00:00,  3.50it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN found in model input !!!
+!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 5:  67%|██████████████████████████████████████                   | 4/6 [00:00<00:00,  4.19it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN found in model input !!!
+!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 5:  83%|███████████████████████████████████████████████▌         | 5/6 [00:01<00:00,  4.20it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 5: 100%|█████████████████████████████████████████████████████████| 6/6 [00:01<00:00,  4.75it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!                                                                                                       | 0/1 [00:00<?, ?it/s]
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 6:   0%|                                                                 | 0/6 [00:00<?, ?it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN found in model input !!!
+!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 6:  17%|█████████▌                                               | 1/6 [00:00<00:03,  1.55it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN found in model input !!!
+!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 6:  33%|███████████████████                                      | 2/6 [00:00<00:01,  2.70it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN found in model input !!!
+!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 6:  50%|████████████████████████████▌                            | 3/6 [00:00<00:00,  3.58it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN found in model input !!!
+!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 6:  67%|██████████████████████████████████████                   | 4/6 [00:00<00:00,  4.27it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN found in model input !!!
+!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 6:  83%|███████████████████████████████████████████████▌         | 5/6 [00:01<00:00,  4.26it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 6: 100%|█████████████████████████████████████████████████████████| 6/6 [00:01<00:00,  4.81it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!                                                                                                       | 0/1 [00:00<?, ?it/s]
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 7:   0%|                                                                 | 0/6 [00:00<?, ?it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN found in model input !!!
+!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 7:  17%|█████████▌                                               | 1/6 [00:00<00:03,  1.57it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN found in model input !!!
+!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 7:  33%|███████████████████                                      | 2/6 [00:00<00:01,  2.72it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN found in model input !!!
+!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 7:  50%|████████████████████████████▌                            | 3/6 [00:00<00:00,  3.61it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 7:  67%|██████████████████████████████████████                   | 4/6 [00:00<00:00,  4.31it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN found in model input !!!
+!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 7:  83%|███████████████████████████████████████████████▌         | 5/6 [00:01<00:00,  4.31it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 7: 100%|█████████████████████████████████████████████████████████| 6/6 [00:01<00:00,  4.86it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!                                                                                                       | 0/1 [00:00<?, ?it/s]
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 8:   0%|                                                                 | 0/6 [00:00<?, ?it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN found in model input !!!
+!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 8:  17%|█████████▌                                               | 1/6 [00:00<00:03,  1.57it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN found in model input !!!
+!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 8:  33%|███████████████████                                      | 2/6 [00:00<00:01,  2.72it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN found in model input !!!
+!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 8:  50%|████████████████████████████▌                            | 3/6 [00:00<00:00,  3.60it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN found in model input !!!
+!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 8:  67%|██████████████████████████████████████                   | 4/6 [00:00<00:00,  4.30it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 8:  83%|███████████████████████████████████████████████▌         | 5/6 [00:01<00:00,  4.29it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN found in model input !!!
+!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 8: 100%|█████████████████████████████████████████████████████████| 6/6 [00:01<00:00,  4.84it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!                                                                                                       | 0/1 [00:00<?, ?it/s]
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 9:   0%|                                                                 | 0/6 [00:00<?, ?it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN found in model input !!!
+!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 9:  17%|█████████▌                                               | 1/6 [00:00<00:03,  1.53it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN found in model input !!!
+!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 9:  33%|███████████████████                                      | 2/6 [00:00<00:01,  2.66it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 9:  50%|████████████████████████████▌                            | 3/6 [00:00<00:00,  3.53it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN found in model input !!!
+!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 9:  67%|██████████████████████████████████████                   | 4/6 [00:00<00:00,  4.22it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN found in model input !!!
+!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 9:  83%|███████████████████████████████████████████████▌         | 5/6 [00:01<00:00,  4.22it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN found in model input !!!
+!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 9: 100%|█████████████████████████████████████████████████████████| 6/6 [00:01<00:00,  4.78it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!                                                                                                       | 0/1 [00:00<?, ?it/s]
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 10:   0%|                                                                | 0/6 [00:00<?, ?it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN found in model input !!!
+!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+Detected KeyboardInterrupt, attempting graceful shutdown ...
+!!! NaN found in final logits !!!
+Epoch 10:  17%|█████████▎                                              | 1/6 [00:00<00:03,  1.55it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN found in model input !!!
+!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 10:  33%|██████████████████▋                                     | 2/6 [00:00<00:01,  2.70it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 10:  50%|████████████████████████████                            | 3/6 [00:00<00:00,  3.58it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN found in model input !!!
+!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 10:  67%|█████████████████████████████████████▎                  | 4/6 [00:00<00:00,  4.27it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 10:  83%|██████████████████████████████████████████████▋         | 5/6 [00:01<00:00,  4.21it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 10: 100%|████████████████████████████████████████████████████████| 6/6 [00:01<00:00,  4.78it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!                                                                                                       | 0/1 [00:00<?, ?it/s]
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 11:   0%|                                                                | 0/6 [00:00<?, ?it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 11:  17%|█████████▎                                              | 1/6 [00:00<00:03,  1.56it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN found in model input !!!
+!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 11:  33%|██████████████████▋                                     | 2/6 [00:00<00:01,  2.70it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN found in model input !!!
+!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 11:  50%|████████████████████████████                            | 3/6 [00:00<00:00,  3.57it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]!!! NaN found in model input !!!
+!!! NaN occurred after ContextEncoder !!!
+!!! NaN occurred after TrajectoryEncoder !!!
+!!! NaN occurred after FusionEncoder !!!
+!!! NaN found in final logits !!!
+Epoch 11:  67%|█████████████████████████████████████▎                  | 4/6 [00:00<00:00,  4.26it/s, v_num=17vx, train_loss=nan.0, val_loss=nan.0, val_pred_error=172.0]

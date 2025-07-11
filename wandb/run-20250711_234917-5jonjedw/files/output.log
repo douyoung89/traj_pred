@@ -1,0 +1,106 @@
+/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/callbacks/model_checkpoint.py:658: Checkpoint directory /data2/douyoungk/checkpoints exists and is not empty.
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0,1]
+  | Name            | Type                     | Params | Mode
+---------------------------------------------------------------------
+0 | context_encoder | ContextEncoder           | 192 K  | train
+1 | traj_encoder    | FourHotTrajectoryEncoder | 9.6 M  | train
+2 | fusion_encoder  | FusionEncoder            | 9.5 M  | train
+3 | decoder         | AISDecoder               | 17.2 M | train
+---------------------------------------------------------------------
+36.4 M    Trainable params
+0         Non-trainable params
+36.4 M    Total params
+145.734   Total estimated model params size (MB)
+145       Modules in train mode
+0         Modules in eval mode
+/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/connectors/logger_connector/result.py:434: It is recommended to use `self.log('val_loss', ..., sync_dist=True)` when logging on epoch level in distributed setting to accumulate the metric across devices.
+/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/connectors/logger_connector/result.py:434: It is recommended to use `self.log('val_pred_error', ..., sync_dist=True)` when logging on epoch level in distributed setting to accumulate the metric across devices.
+/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/loops/fit_loop.py:310: The number of training batches (6) is smaller than the logging interval Trainer(log_every_n_steps=50). Set a lower value for log_every_n_steps if you want to see logs for the training epoch.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 13: 100%|████████████████████████████████████████████| 6/6 [00:01<00:00,  3.03it/s, v_num=jedw, train_loss=6.610, val_loss=5.790, val_pred_error=14.70]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 49:  67%|█████████████████████████████▎              | 4/6 [00:01<00:00,  3.09it/s, v_num=jedw, train_loss=1.320, val_loss=1.040, val_pred_error=0.544]
+`Trainer.fit` stopped: `max_epochs=50` reached.
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0,1]
+/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:216: Using `DistributedSampler` with the dataloaders. During `trainer.test()`, it is recommended to use `Trainer(devices=1, num_nodes=1)` to ensure each sample/batch gets evaluated exactly once. Otherwise, multi-device settings use `DistributedSampler` that replicates some samples to make sure all devices have same batch size in case of uneven inputs.
+Epoch 49: 100%|████████████████████████████████████████████| 6/6 [00:02<00:00,  2.89it/s, v_num=jedw, train_loss=1.600, val_loss=1.040, val_pred_error=0.544]
+Testing DataLoader 0: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00, 38.20it/s]
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+       Test metric             DataLoader 0
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+     test_pred_error        1.1625416278839111
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
