@@ -1,0 +1,212 @@
+{
+    "os": "Linux-6.8.0-47-generic-x86_64-with-glibc2.35",
+    "python": "3.10.18",
+    "heartbeatAt": "2025-07-11T13:43:36.996848",
+    "startedAt": "2025-07-11T13:43:36.164135",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "/data2/douyoungk/train/lit_module.py",
+    "codePathLocal": "lit_module.py",
+    "codePath": "lit_module.py",
+    "git": {
+        "remote": "git@github.com:douyoung89/traj_pred.git",
+        "commit": "f91d146fddb6a0927c3474098cd3dbd3612e0946"
+    },
+    "email": "douyoung89@naver.com",
+    "root": "/data2/douyoungk/train",
+    "host": "gpu34",
+    "username": "iscilab",
+    "executable": "/data2/envs/xformer/bin/python",
+    "cpu_count": 16,
+    "cpu_count_logical": 32,
+    "cpu_freq": {
+        "current": 2877.52215625,
+        "min": 2200.0,
+        "max": 3400.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2200.0,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 2200.0,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 4565.99,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 4566.718,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 3652.769,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 3400.0,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 3400.0,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 3637.103,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 3653.09,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 4566.391,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 2200.0,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 2200.0,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 2200.0,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 2200.0,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 2200.0,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 2200.0,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 3652.931,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 3875.195,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 4554.659,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 2200.0,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 2200.0,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 4074.377,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 3400.0,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 3652.542,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 2200.0,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 2200.0,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 2200.0,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 2200.0,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 2200.0,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 2200.0,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 3644.991,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 3654.22,
+            "min": 2200.0,
+            "max": 3400.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 456.34544372558594,
+            "used": 431.0078582763672
+        }
+    },
+    "gpu": "NVIDIA RTX A6000",
+    "gpu_count": 2,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA RTX A6000",
+            "memory_total": 51527024640
+        },
+        {
+            "name": "NVIDIA RTX A6000",
+            "memory_total": 51527024640
+        }
+    ],
+    "memory": {
+        "total": 94.20463180541992
+    }
+}

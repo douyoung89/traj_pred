@@ -3,11 +3,12 @@ from torch.utils.data import Dataset
 import pickle
 import numpy as np
 from datetime import datetime, timedelta, timezone
+import config 
 
 # --- 상수 & 헬퍼 ---
-LAT_MIN, LAT_MAX = 55.5, 58.0
-LON_MIN, LON_MAX = 10.3, 13.0
-PATCH_SIZE = 64
+LAT_MIN, LAT_MAX = config.LAT_MIN, config.LAT_MAX
+LON_MIN, LON_MAX = config.LON_MIN, config.LON_MAX
+PATCH_SIZE = config.PATCH_SIZE 
 
 def normalize_lat(lat):   return (lat - LAT_MIN) / (LAT_MAX - LAT_MIN)
 def normalize_lon(lon):   return (lon - LON_MIN) / (LON_MAX - LON_MIN)

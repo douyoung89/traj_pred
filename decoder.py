@@ -85,6 +85,15 @@ class AISDecoder(nn.Module):
         sog_logits = self.head_sog(dec_out)
         cog_logits = self.head_cog(dec_out)
         
+        # print("Checking cog_i values:")
+        # print("Min:", cog_i.min().item())
+        # print("Max:", cog_i.max().item())
+        # print("Unique values:", torch.unique(cog_i))
+
+        # # 클래스 개수 확인
+        # num_classes = self.att_sizes[3].item()
+        # print("Number of classes:", num_classes)
+        lat_i, lon_i, sog_i, cog_i = lat_i.to(torch.long), lon_i.to(torch.long), sog_i.to(torch.long), cog_i.to(torch.long)
         
         loss_lat = self.loss_fn(lat_logits.view(-1, self.att_sizes[0].item()), lat_i.view(-1))
         loss_lon = self.loss_fn(lon_logits.view(-1, self.att_sizes[1].item()), lon_i.view(-1))

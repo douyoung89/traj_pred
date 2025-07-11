@@ -1,0 +1,44 @@
+Traceback (most recent call last):
+  File "/data2/douyoungk/train/lit_module.py", line 245, in <module>
+    trainer.fit(model, dm)
+  File "/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py", line 561, in fit
+    call._call_and_handle_interrupt(
+  File "/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/call.py", line 47, in _call_and_handle_interrupt
+    return trainer.strategy.launcher.launch(trainer_fn, *args, trainer=trainer, **kwargs)
+  File "/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/strategies/launchers/subprocess_script.py", line 105, in launch
+    return function(*args, **kwargs)
+  File "/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py", line 599, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py", line 974, in _run
+    call._call_setup_hook(self)  # allow user to set up LightningModule in accelerator environment
+  File "/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/call.py", line 107, in _call_setup_hook
+    _call_lightning_datamodule_hook(trainer, "setup", stage=fn)
+  File "/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/call.py", line 198, in _call_lightning_datamodule_hook
+    return fn(*args, **kwargs)
+  File "/data2/douyoungk/train/lit_module.py", line 29, in setup
+    self.train_dataset = VesselPatchDataset(
+  File "/data2/douyoungk/train/dataset.py", line 26, in __init__
+    with open(ais_data_file, 'rb') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/data2/douyoungk/train/test/train_3mth.pkl'
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/data2/douyoungk/train/lit_module.py", line 245, in <module>
+[rank0]:     trainer.fit(model, dm)
+[rank0]:   File "/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py", line 561, in fit
+[rank0]:     call._call_and_handle_interrupt(
+[rank0]:   File "/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/call.py", line 47, in _call_and_handle_interrupt
+[rank0]:     return trainer.strategy.launcher.launch(trainer_fn, *args, trainer=trainer, **kwargs)
+[rank0]:   File "/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/strategies/launchers/subprocess_script.py", line 105, in launch
+[rank0]:     return function(*args, **kwargs)
+[rank0]:   File "/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py", line 599, in _fit_impl
+[rank0]:     self._run(model, ckpt_path=ckpt_path)
+[rank0]:   File "/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py", line 974, in _run
+[rank0]:     call._call_setup_hook(self)  # allow user to set up LightningModule in accelerator environment
+[rank0]:   File "/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/call.py", line 107, in _call_setup_hook
+[rank0]:     _call_lightning_datamodule_hook(trainer, "setup", stage=fn)
+[rank0]:   File "/home/iscilab/.local/lib/python3.10/site-packages/pytorch_lightning/trainer/call.py", line 198, in _call_lightning_datamodule_hook
+[rank0]:     return fn(*args, **kwargs)
+[rank0]:   File "/data2/douyoungk/train/lit_module.py", line 29, in setup
+[rank0]:     self.train_dataset = VesselPatchDataset(
+[rank0]:   File "/data2/douyoungk/train/dataset.py", line 26, in __init__
+[rank0]:     with open(ais_data_file, 'rb') as f:
+[rank0]: FileNotFoundError: [Errno 2] No such file or directory: '/data2/douyoungk/train/test/train_3mth.pkl'

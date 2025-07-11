@@ -1,0 +1,1 @@
+{"val_loss": NaN, "val_pred_error": 172.48529052734375, "epoch": 50, "trainer/global_step": 300, "_timestamp": 1752242748.4797366, "_runtime": 72.05011653900146, "_step": 56, "train_loss": NaN, "test_pred_error": 188.10708618164062, "_wandb": {"runtime": 71}}
