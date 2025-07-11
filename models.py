@@ -147,4 +147,3 @@ for batch in dataloader:
     # optimizer.zero_grad()
     
     break # 테스트를 위해 첫 배치만 실행
-    break

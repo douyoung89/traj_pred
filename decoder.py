@@ -23,6 +23,7 @@ class AISDecoder(nn.Module):
         super().__init__()
         # ──────────────────────────────────────────────────────
         # 1) Four-hot embedding (토큰 입력용)
+        self.att_sizes: torch.Tensor  # declare it here
         self.register_buffer(
             'att_sizes', torch.tensor([lat_size, lon_size, sog_size, cog_size])
         )
